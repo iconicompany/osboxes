@@ -17,7 +17,7 @@ VBoxManage modifyvm "demo" --natpf1 "guesthttp,tcp,,8888,,80"
 
 ## Configure LAMP
 ```
-zypper in apache2 php7 php7-mysql apache2-mod_php7 mariadb mariadb-tools
+zypper in apache2 php7 php7-mysql php7-curl apache2-mod_php7 mariadb mariadb-tools
 systemctl enable mysql
 systemctl enable apache2
 ```
