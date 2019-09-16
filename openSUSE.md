@@ -16,18 +16,24 @@ VBoxManage modifyvm "demo" --natpf1 "guesthttp,tcp,,8888,,80"
 
 
 ## Configure LAMP
-
+```
 zypper in apache2 php7 php7-mysql apache2-mod_php7 mariadb mariadb-tools
 systemctl enable mysql
 systemctl enable apache2
-
-#Enable php module
+```
+Enable php module
+```
 a2enmod php7
+```
 
 ## Check out testapp
+```
 zypper in git
+```
 
+```
 cd /srv/www/htdocs 
 git clone https://github.com/bystrobank/testapp.git
+```
 
 Open http://localhost:8888/testapp/web/documentList.php and see result
