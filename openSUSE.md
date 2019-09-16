@@ -1,8 +1,12 @@
 # Setup openSUSE
 
 ## Setup virtualbox
-Download [openSUSE 15.1 Leap Server Version](https://www.osboxes.org/opensuse/) image
+Download [openSUSE 15.1 Leap Server Version](https://www.osboxes.org/opensuse/) image.
+
 Create virtual machine "demo", add downloaded disk image and boot.
+
+Login as `root` (password osboxes.org), then change it using `passwd`. 
+You can generate random password with `uuidgen` utility.
 
 ## Setup network
 Run yast, configure DHCP, proxy (if required), firewall (enable apache2)
