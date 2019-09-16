@@ -1,0 +1,2 @@
+# osboxes
+Hosting setup
