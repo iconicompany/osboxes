@@ -19,7 +19,9 @@ VBoxManage modifyvm "demo" --natpf1 "guesthttp,tcp,,8888,,80"
 ```
 zypper in apache2 php7 php7-mysql php7-curl php7-xsl apache2-mod_php7 mariadb mariadb-tools
 systemctl enable mysql
+rcmysql start
 systemctl enable apache2
+rcapache start
 ```
 Enable php module
 ```
@@ -35,6 +37,14 @@ zypper in git
 ```
 cd /srv/www/htdocs 
 git clone https://github.com/bystrobank/testapp.git
+```
+
+Create database schema:
+
+```
+cd testapp/tools/sql
+mysql -uroot < testappdb.sql
+mysql -uroot testapp < document.sql
 ```
 
 Open http://localhost:8888/testapp/web/documentList.php and see result
