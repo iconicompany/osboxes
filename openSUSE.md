@@ -75,7 +75,32 @@ JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
 
 # for correct URI encoding
 JkOptions +ForwardURICompatUnparsed
+```
 
+### Build fopservlet
+```
+cd $HOME
+mkdir work
+cd work
+https://github.com/bystrobank/fopservlet.git
+cd fopservlet
+mvn clean install
+```
+### Deploy fopservlet
+
+```
+cp $HOME/.m2/repository/org/apache/fop/fopservlet/1.0-SNAPSHOT/fopservlet-1.0-SNAPSHOT.war /srv/tomcat/webapps/fopservlet.war
+```
+Tomcat will unpack this war to /srv/tomcat/webapps/fopservlet directory.
+
+Configure ajp proxy:
+Add lines to /etc/apache2/conf.d/jk.conf
+```
 JkMount /fopservlet ajp13
 JkMount /fopservlet/* ajp13
+```
+
+then restart/reload apache
+```
+service apache2 restart
 ```
