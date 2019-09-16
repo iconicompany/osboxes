@@ -62,7 +62,7 @@ systemctl enable tomcat
 rctomcat start
 ```
 
-As "root" user, create the "/etc/apache2/workers.properties" file with this content 
+As "root" user, create the `/etc/apache2/workers.properties` file with this content 
 ```
 worker.list=ajp13
 worker.ajp13.port=8009
@@ -75,7 +75,7 @@ worker.ajp13.connect_timeout=5000
 worker.ajp13.prepost_timeout=5000
 ```
 
-Create /etc/apache2/conf.d/jk.conf with this content
+Create `/etc/apache2/conf.d/jk.conf` with this content
 
 ```
 JkWorkersFile     /etc/apache2/workers.properties
@@ -102,10 +102,10 @@ mvn clean install
 ```
 cp $HOME/.m2/repository/org/apache/fop/fopservlet/1.0-SNAPSHOT/fopservlet-1.0-SNAPSHOT.war /srv/tomcat/webapps/fopservlet.war
 ```
-Tomcat will unpack this war to /srv/tomcat/webapps/fopservlet directory.
+Tomcat will unpack this war to `/srv/tomcat/webapps/fopservlet` directory.
 
 Configure ajp proxy:
-Add lines to /etc/apache2/conf.d/jk.conf
+Add lines to `/etc/apache2/conf.d/jk.conf`
 ```
 JkMount /fopservlet ajp13
 JkMount /fopservlet/* ajp13
