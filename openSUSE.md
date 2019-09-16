@@ -115,6 +115,9 @@ then restart/reload apache
 ```
 service apache2 restart
 ```
+
+Open http://localhost:8888/fopservlet/fopservlet?fo=helloworld.fo and see result
+
 ### Deploy eurofxref-daily (PHP)
 ```
 cd /srv/www/htdocs 
