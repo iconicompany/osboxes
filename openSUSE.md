@@ -5,7 +5,7 @@ Download [openSUSE 15.1 Leap Server Version](https://www.osboxes.org/opensuse/) 
 
 Create virtual machine "demo", add downloaded disk image and boot.
 
-Login as `root` (password osboxes.org), then change it using `passwd`. 
+Login as `root` (password `osboxes.org`), then change it using `passwd`. 
 You can generate random password with `uuidgen` utility.
 
 ## Setup network
