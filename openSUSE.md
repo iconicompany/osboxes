@@ -50,3 +50,32 @@ a2enmod jk
 systemctl enable tomcat
 rctomcat start
 ```
+
+As "root" user, create the "/etc/apache2/workers.properties" file with this content 
+```
+worker.list=ajp13
+worker.ajp13.port=8009
+worker.ajp13.host=localhost
+worker.ajp13.type=ajp13
+worker.ajp13.socket_keepalive=true
+worker.ajp13.lbfactor=1
+worker.ajp13.connection_pool_size=30
+worker.ajp13.connect_timeout=5000
+worker.ajp13.prepost_timeout=5000
+```
+
+Create /etc/apache2/conf.d/jk.conf with this content
+
+```
+JkWorkersFile     /etc/apache2/workers.properties
+JkShmFile     /var/log/apache2/mod_jk.shm
+JkLogFile     /var/log/apache2/mod_jk.log
+
+JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
+
+# for correct URI encoding
+JkOptions +ForwardURICompatUnparsed
+
+JkMount /fopservlet ajp13
+JkMount /fopservlet/* ajp13
+```
