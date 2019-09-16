@@ -93,7 +93,7 @@ JkOptions +ForwardURICompatUnparsed
 cd $HOME
 mkdir work
 cd work
-https://github.com/bystrobank/fopservlet.git
+git clone https://github.com/bystrobank/fopservlet.git
 cd fopservlet
 mvn clean install
 ```
