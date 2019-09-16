@@ -105,3 +105,13 @@ then restart/reload apache
 ```
 service apache2 restart
 ```
+### Deploy eurofxref-daily (PHP)
+```
+cd /srv/www/htdocs 
+git clone https://github.com/bystrobank/eurofxref-daily.git
+```
+
+Replace http://www.demo.ilb.ru/fopservlet/fopservlet with http://www.demo.ilb.ru/fopservlet/fopservlet to use local fopservlet.
+
+Open http://localhost:8888/eurofxref-daily/web/eurofxref-daily.php?format=pdf and see result
+
