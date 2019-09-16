@@ -111,7 +111,7 @@ cd /srv/www/htdocs
 git clone https://github.com/bystrobank/eurofxref-daily.git
 ```
 
-Replace http://www.demo.ilb.ru/fopservlet/fopservlet with http://localhost/fopservlet/fopservlet to use local fopservlet.
+Replace http://www.demo.ilb.ru/fopservlet/fopservlet in web/eurofxref-daily.php with http://localhost/fopservlet/fopservlet to use local fopservlet.
 
 Open http://localhost:8888/eurofxref-daily/web/eurofxref-daily.php?format=pdf and see result
 
