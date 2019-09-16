@@ -26,11 +26,12 @@ Enable php module
 a2enmod php7
 ```
 
-### Deploy testapp (PHP)
+### Install git
 ```
 zypper in git
 ```
 
+### Deploy testapp (PHP)
 ```
 cd /srv/www/htdocs 
 git clone https://github.com/bystrobank/testapp.git
