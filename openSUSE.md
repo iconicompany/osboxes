@@ -9,7 +9,7 @@ Login as `root` (password `osboxes.org`), then change it using `passwd`.
 You can generate random password with `uuidgen` utility.
 
 ## Setup network
-Run yast, configure DHCP, proxy (if required), firewall (enable apache2)
+Inside guest run `yast`, configure network: `DHCP`, proxy (if required), firewall: enable `apache2` on public zone.
 
 Confiure port forwarding (ssh 2222->22, www 8888->80)
 
