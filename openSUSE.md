@@ -154,3 +154,5 @@ npm install && npm run export
 cp -r out/nextjsproject /srv/www/htdocs
 cp -r out/_next /srv/www/htdocs/nextjsproject
 ```
+
+Open http://localhost:8888/nextjsproject/home.html and see result
