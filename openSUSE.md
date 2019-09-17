@@ -91,6 +91,13 @@ JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
 # for correct URI encoding
 JkOptions +ForwardURICompatUnparsed
 ```
+### Fix tomcat package
+Fix errors `java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSourceFactory` and `org.apache.commons.logging.LogFactory`
+```
+cd /usr/share/java/tomcat
+ln -s ../commons-logging.jar
+sed -i 's/org.apache.commons.dbcp.BasicDataSourceFactory/org.apache.commons.dbcp2.BasicDataSourceFactory/' /usr/share/tomcat/conf/tomcat.conf
+```
 
 ### Build fopservlet
 ```
