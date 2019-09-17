@@ -139,3 +139,18 @@ Replace http://www.demo.ilb.ru/fopservlet/fopservlet in `web/eurofxref-daily.php
 
 Open http://localhost:8888/eurofxref-daily/web/eurofxref-daily.php?format=pdf and see result
 
+## Setup node
+
+```
+zypper install nodejs10
+```
+
+### Deploy static nextjs project
+
+```
+git clone https://github.com/ilb/nextjsproject.git
+cd nextjsproject
+npm install && npm run export
+cp -r out/nextjsproject /srv/www/htdocs
+cp -r out/_next /srv/www/htdocs/nextjsproject
+```
