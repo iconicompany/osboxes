@@ -156,3 +156,19 @@ cp -r out/_next /srv/www/htdocs/nextjsproject
 ```
 
 Open http://localhost:8888/nextjsproject/home.html and see result
+
+## Setup jenkins
+
+Download jenkins
+```
+curl -o /srv/tomcat/webapps/jenkins.war http://mirrors.jenkins.io/war/latest/jenkins.war
+```
+
+Configure ajp proxy:
+Add lines to `/etc/apache2/conf.d/jk.conf`
+```
+JkMount /jenkins ajp13
+JkMount /jenkins/* ajp13
+```
+
+Open http://localhost:8888/jenkins/ and continue setup.
