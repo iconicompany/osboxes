@@ -1,7 +1,7 @@
 # Setup openSUSE
 
 ## Setup virtualbox
-Download [openSUSE 15.1 Leap Server Version](https://www.osboxes.org/opensuse/) image.
+Download [openSUSE 15.1 Leap Server OR KDE Plasma Version Version](https://www.osboxes.org/opensuse/) image.
 
 Create virtual machine "demo", add downloaded disk image and boot.
 
