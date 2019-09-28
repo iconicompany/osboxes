@@ -201,3 +201,16 @@ And reaload http server configuration
 ```
 rcapache2 reload
 ```
+## Misc
+
+### Track server configuration changes using svn repository
+
+```
+mkdir /var/svn
+cd /var/svn
+svnadmin create etc
+cd /etc
+svn co file:///var/svn/etc
+svn add apache2 [... other dirs you want to track...]
+svn ci
+```
