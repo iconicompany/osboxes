@@ -116,7 +116,7 @@ cp $HOME/.m2/repository/org/apache/fop/fopservlet/1.0-SNAPSHOT/fopservlet-1.0-SN
 Tomcat will unpack this war to `/srv/tomcat/webapps/fopservlet` directory.
 
 Configure ajp proxy:
-Add lines to `/etc/apache2/conf.d/jk.conf`
+Add lines to `/etc/apache2/conf.d/jk.conf` or configured virtual host (preferable)
 ```
 JkMount /fopservlet ajp13
 JkMount /fopservlet/* ajp13
