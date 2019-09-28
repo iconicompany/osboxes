@@ -172,3 +172,32 @@ JkMount /jenkins/* ajp13
 ```
 
 Open http://localhost:8888/jenkins/ and continue setup.
+
+## Setup virtual hosts and ssl
+
+### Install yast2-http-server and enable ssl and rewrite modules
+
+```
+zypper install yast2-http-server
+a2enmod rewrite
+a2enmod ssl
+```
+
+Run yast -> Network Services -> HTTP Server, configure virtual host.
+
+### Setup certbot
+
+```
+zypper install python3-certbot python3-certbot-apache
+```
+
+Configure created virtual host
+```
+certbot --apache
+```
+
+And reaload http server configuration
+
+```
+rcapache2 reload
+```
