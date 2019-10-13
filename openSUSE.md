@@ -20,16 +20,16 @@ VBoxManage modifyvm "demo" --natpf1 "guesthttp,tcp,,8888,,80"
 
 
 ## Configure LAMP
-```
+
+LAMP = Linux + Apache + MySQL + PHP
+
+```bash
 zypper in apache2 php7 php7-mysql php7-curl php7-xsl apache2-mod_php7 mariadb mariadb-tools
 systemctl enable mysql
 rcmysql start
 systemctl enable apache2
-rcapache start
-```
-Enable php module
-```
-a2enmod php7
+a2enmod php7 # enable php module
+rcapache2 start
 ```
 
 ### Install git
