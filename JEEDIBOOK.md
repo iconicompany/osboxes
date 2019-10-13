@@ -1,6 +1,6 @@
-# Java/NodeJS Developer openSUSE setup
+# JEEDIBOOK
 
-# Repos
+## Repos
 
 Add repos for maven, svn 1.9 (NB 11.1 compatibility javahl), netbeans
 
