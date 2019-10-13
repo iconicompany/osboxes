@@ -18,9 +18,13 @@ psi+ \
 stunnel \
 java-11-openjdk java-11-openjdk-src java-11-openjdk-devel \
 mysql-workbench \
-subversion \
 git \
 maven \
 netbeans
+
+# install and lock subversion 1.9
+zypper in -r "devel:tools:scm:svn:1.9" subversion
+zypper al subversion
+
 ```
 
