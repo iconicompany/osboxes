@@ -41,3 +41,9 @@ systemctl enable apache2
 a2enmod php7 # enable php module
 rcapache2 start
 ```
+
+## Setup node
+
+```
+zypper install nodejs10
+```
