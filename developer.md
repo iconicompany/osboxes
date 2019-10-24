@@ -13,7 +13,7 @@ zypper ar "http://download.opensuse.org/repositories/home:/Herbster0815/openSUSE
 ## Packages
 
 ```bash
-sudo zypperr in \
+sudo zypper in \
 psi+ \
 stunnel \
 java-11-openjdk java-11-openjdk-src java-11-openjdk-devel \
