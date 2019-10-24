@@ -1,4 +1,4 @@
-# JEEDIBOOK
+# Developer workstation
 
 ## Repos
 
@@ -46,4 +46,10 @@ rcapache2 start
 
 ```
 zypper install nodejs10
+```
+
+## Setup python
+
+```
+zypper install python3-pandas python3-jupyter_notebook
 ```
