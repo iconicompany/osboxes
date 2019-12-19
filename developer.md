@@ -16,7 +16,7 @@ zypper ar "http://download.opensuse.org/repositories/home:/Herbster0815/openSUSE
 sudo zypper in \
 psi+ \
 stunnel \
-java-11-openjdk java-11-openjdk-src java-11-openjdk-devel \
+java-11-openjdk java-11-openjdk-src java-11-openjdk-javadoc java-11-openjdk-devel \
 mysql-workbench \
 git \
 maven \
