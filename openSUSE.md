@@ -210,7 +210,7 @@ mkdir /var/svn
 cd /var/svn
 svnadmin create etc
 cd /etc
-svn co file:///var/svn/etc
+svn co file:///var/svn/etc .
 svn add apache2 [... other dirs you want to track...]
 svn ci
 ```
