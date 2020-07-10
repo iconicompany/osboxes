@@ -2,12 +2,11 @@
 
 ## Repos
 
-Add repos for maven, svn 1.9 (NB 11.1 compatibility javahl), netbeans
+Add repos for maven, netbeans
 
 ```bash
-zypper ar "https://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_Leap_15.1/" "develtools"
-zypper ar "http://download.opensuse.org/repositories/devel:/tools:/scm:/svn:/1.9/openSUSE_Leap_15.0/" "devel:tools:scm:svn:1.9"
-zypper ar "http://download.opensuse.org/repositories/home:/Herbster0815/openSUSE_Leap_15.1/" "home:Herbster0815"
+zypper ar "https://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_Leap_15.2/" "develtools"
+zypper ar "http://download.opensuse.org/repositories/home:/Herbster0815/openSUSE_Leap_15.2/" "home:Herbster0815"
 ```
 
 ## Packages
@@ -21,10 +20,6 @@ mysql-workbench \
 git \
 maven \
 netbeans
-
-# install and lock subversion 1.9
-zypper in -r "devel:tools:scm:svn:1.9" subversion
-zypper al subversion
 
 ```
 
