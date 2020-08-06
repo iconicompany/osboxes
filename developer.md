@@ -29,7 +29,7 @@ netbeans
 LAMP = Linux + Apache + MySQL + PHP
 
 ```bash
-zypper in apache2 php7 php7-mysql php7-curl php7-xsl apache2-mod_php7 mariadb mariadb-tools
+zypper in apache2 php7 php7-mysql php7-curl php7-xsl xhtml-dtd mathml-dtd php7-tidy apache2-mod_php7 php7-posix mariadb mariadb-tools
 systemctl enable mysql
 rcmysql start
 systemctl enable apache2
