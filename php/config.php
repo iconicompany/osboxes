@@ -10,4 +10,7 @@
   umask(027);
 
   $_SERVER["TMPDIR"] = sys_get_temp_dir();
-  $_SERVER["ILB_SSLCACERTIFICATEFILE"] = "/etc/ssl/ourCAbundle.crt";
+  $_SERVER["ILB_SSLCACERTIFICATEFILE"] = "/etc/ssl/certs/ourCAbundle.crt";
+  $_SERVER["HOME"] = "/var/lib/wwwrun";
+  $_SERVER["REMOTE_USER"] = "user";
+  // trigger_error(print_r($_SERVER,true));
