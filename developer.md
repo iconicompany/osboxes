@@ -1,4 +1,4 @@
-# Developer workstation
+# Developer OpenSuse developer workstation
 
 ## Install OpenSuse 
 
