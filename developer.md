@@ -4,8 +4,8 @@
 
 Two options
 
-1. Download (OpenSuse Leap ISO Image)[https://software.opensuse.org/distributions/leap] and "burn" it to usb flash.
-2. Try prepared (VirtualBox/VMVare image)[virtualbox.md]
+1. Download [OpenSuse Leap ISO Image](https://software.opensuse.org/distributions/leap) and "burn" it to usb flash.
+2. Try prepared [VirtualBox/VMVare image](virtualbox.md)
 
 ## Nodejs development
 
