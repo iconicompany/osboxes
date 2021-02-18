@@ -15,7 +15,7 @@ Two options
 zypper install nodejs14
 ```
 
-### Install vscode
+### Install Visual Studio Code
 
 From https://en.opensuse.org/Visual_Studio_Code
 
