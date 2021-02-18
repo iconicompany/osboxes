@@ -1,5 +1,6 @@
 ##  OpenSuse in Virtualbox / VMVare
-Download [openSUSE 15.2 Leap Server OR KDE Plasma Version Version](https://www.osboxes.org/opensuse/) image.
+Download [openSUSE 15.2 Leap](https://www.osboxes.org/opensuse/) image.
+Choose KDE Plasma Version Version for GUI, OR Server Version for base "server mode".
 
 Create virtual machine "demo", add downloaded disk image and boot.
 
