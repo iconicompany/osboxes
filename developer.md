@@ -1,15 +1,50 @@
 # Developer workstation
 
-## Repos
+## Install OpenSuse 
 
-Add repos for maven, netbeans
+Two options
+
+1. Download (OpenSuse Leap ISO Image)[https://software.opensuse.org/distributions/leap] and "burn" it to usb flash.
+2. Try prepared (VirtualBox/VMVare image)[virtualbox.md]
+
+## Nodejs development
+
+### Install nodejs
+
+```
+zypper install nodejs14
+```
+
+### Install vscode
+
+From https://en.opensuse.org/Visual_Studio_Code
+
+```
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo zypper addrepo https://packages.microsoft.com/yumrepos/vscode vscode
+sudo zypper refresh
+sudo zypper install code
+```
+
+## Python development
+Install python, pandas, etc
+
+```
+zypper install python3-pandas python3-jupyter_notebook
+```
+
+## Java development
+
+For java development install Java, Netbeans IDE
+
+### Add repos for maven, netbeans
 
 ```bash
 zypper ar "https://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_Leap_15.2/" "develtools"
 zypper ar "http://download.opensuse.org/repositories/home:/Herbster0815/openSUSE_Leap_15.2/" "home:Herbster0815"
 ```
 
-## Packages
+### Install packages
 
 ```bash
 sudo zypper in \
@@ -23,8 +58,11 @@ netbeans
 
 ```
 
+## PHP development
 
-## Configure LAMP
+Setup netbeans as above (Java)
+
+### Configure LAMP
 
 LAMP = Linux + Apache + MySQL + PHP
 
@@ -35,16 +73,4 @@ rcmysql start
 systemctl enable apache2
 a2enmod php7 # enable php module
 rcapache2 start
-```
-
-## Setup node
-
-```
-zypper install nodejs14
-```
-
-## Setup python
-
-```
-zypper install python3-pandas python3-jupyter_notebook
 ```
