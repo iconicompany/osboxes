@@ -40,7 +40,7 @@ rcapache2 start
 ## Setup node
 
 ```
-zypper install nodejs10
+zypper install nodejs14
 ```
 
 ## Setup python
