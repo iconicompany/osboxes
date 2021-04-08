@@ -48,7 +48,6 @@ Open http://localhost:8888/testapp/web/documentList.php and see result
 
 Install tomcat and maven
 ```
-zypper ar "https://download.opensuse.org/repositories/devel:/tools:/building/openSUSE_Leap_15.1/" "develtools"
 zypper in tomcat maven apache2-mod_jk
 a2enmod jk
 
