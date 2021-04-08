@@ -65,8 +65,15 @@ worker.ajp13.socket_keepalive=true
 worker.ajp13.lbfactor=1
 worker.ajp13.connection_pool_size=30
 worker.ajp13.connect_timeout=5000
-worker.ajp13.prepost_timeout=5000
+worker.ajp13.prepost_timeout=5000/etc/tomcat/server.xml
 ```
+
+Add AJP Connector to `/etc/tomcat/server.xml`
+
+```xml
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>
+```
+
 
 Create `/etc/apache2/conf.d/jk.conf` with this content
 
