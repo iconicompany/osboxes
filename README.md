@@ -1,5 +1,6 @@
 # osboxes
 Hosting setup
 
-1. Setup [OpenSUSE development server](server.md)
-2. Setup [OpenSUSE development workstation](developer.md)
+## OpenSuse
+1. Setup [OpenSUSE development server](opensuse/server.md)
+2. Setup [OpenSUSE development workstation](opensuse/developer.md)
