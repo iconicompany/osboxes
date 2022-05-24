@@ -1,3 +1,4 @@
+set -e
 cd /tmp
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
 sudo apt install ./viber.deb
