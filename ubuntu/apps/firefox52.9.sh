@@ -1,0 +1,1 @@
+#https://www.abqlug.com/tutorials/how-to-install-firefox-esr-52-9-on-ubuntu-18-04/
