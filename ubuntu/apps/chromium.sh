@@ -7,5 +7,5 @@
 
 sudo add-apt-repository ppa:xtradeb/apps -y
 sudo apt update
-sudo apt install chromium
+sudo apt install chromium chromium-l10n
 echo "Package: chromium\nPin: release o=LP-PPA-xtradeb-apps\nPin-Priority: 700" | sudo tee /etc/apt/preferences.d/chromium-pin
