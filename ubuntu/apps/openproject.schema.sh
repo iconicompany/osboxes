@@ -4,7 +4,7 @@ read -r answer
 
 PWD=`uuidgen`
 sudo -u postgres psql << EOT
-DROP DATABASE IF EXISTS icompany;
+DROP DATABASE IF EXISTS openproject;
 create database openproject;
 CREATE USER openproject WITH PASSWORD '$PWD';
 GRANT ALL PRIVILEGES ON DATABASE openproject to openproject;
