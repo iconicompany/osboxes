@@ -1,2 +1,4 @@
-# https://computingforgeeks.com/installing-postgresql-database-server-on-ubuntu/
-sudo apt install postgresql postgresql-client
+set -e
+sudo apt install -y postgresql-common
+sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+sudo apt install -y postgresql 

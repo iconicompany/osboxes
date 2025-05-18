@@ -1,1 +1,1 @@
-apt install squid squid-openssl
+apt install -y squid #squid-openssl

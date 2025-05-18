@@ -1,2 +1,2 @@
-sudo apt install nginx certbot python3-certbot-nginx
+sudo apt install -y nginx certbot python3-certbot-nginx
 
