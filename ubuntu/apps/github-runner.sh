@@ -5,3 +5,4 @@ curl -o actions-runner-linux-x64-2.324.0.tar.gz -L https://github.com/actions/ru
 tar xzf ./actions-runner-linux-x64-2.324.0.tar.gz;
 rm actions-runner-linux-x64-2.324.0.tar.gz"
 sudo gpasswd -a runner docker
+./k3s-kubectl.sh
