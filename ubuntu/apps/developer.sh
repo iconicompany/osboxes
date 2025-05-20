@@ -3,3 +3,4 @@ set -e -v
 ./nodejs.sh
 ./bun.sh
 ./docker.sh
+./werf.sh
