@@ -23,7 +23,7 @@ wget https://dl.min.io/server/minio/release/linux-amd64/archive/minio_2025052417
 sudo dpkg -i minio.deb
 rm minio.deb
 
-curl -o mc-minio https://dl.min.io/client/mc/release/linux-amd64/mc
+curl -Lo mc-minio https://dl.min.io/client/mc/release/linux-amd64/mc
 chmod +x mc-minio
 sudo mv mc-minio /usr/local/bin/mc-minio
 
