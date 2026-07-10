@@ -4,11 +4,25 @@ set -e
 # Проверяем, передан ли первый параметр (имя пользователя)
 if [ -z "$1" ]; then
     echo "Ошибка: Не указано имя пользователя!"
-    echo "Использование: $0 <имя_пользователя>"
+    echo "Использование: $0 <имя_пользователя> [пароль]"
     exit 1
 fi
 
 NEW_USER="$1"
+
+# Проверяем второй параметр (пароль). Если пусто — генерируем через uuidgen
+if [ -z "$2" ]; then
+    echo "=== Проверка и установка uuidgen ==="
+    if ! command -v uuidgen &> /dev/null; then
+        echo "uuidgen не найден. Устанавливаем uuid-runtime..."
+        sudo apt-get update && sudo apt-get install -y uuid-runtime
+    fi
+    NEW_PASSWORD=$(uuidgen)
+    echo "Пароль не указан. Сгенерирован автоматически."
+else
+    NEW_PASSWORD="$2"
+    echo "Используется пароль, переданный в аргументах."
+fi
 
 # Настройки подключения к локальному MinIO
 MINIO_URL="http://localhost:9000"
@@ -28,21 +42,12 @@ if [ -z "$ROOT_PASSWORD" ]; then
     exit 1
 fi
 
-echo "=== 2. Проверка и установка uuidgen ==="
-if ! command -v uuidgen &> /dev/null; then
-    echo "uuidgen не найден. Устанавливаем uuid-runtime..."
-    sudo apt-get update && sudo apt-get install -y uuid-runtime
-fi
-
-# Генерируем надежный пароль
-NEW_PASSWORD=$(uuidgen)
-
-echo "=== 3. Настройка клиента mc-minio ==="
+echo "=== 2. Настройка клиента mc-minio ==="
 # Инициализируем подключение (создаем или обновляем alias 'local')
 mc-minio alias set local "$MINIO_URL" "$ROOT_USER" "$ROOT_PASSWORD"
 
-echo "=== 4. Создание пользователя в MinIO ==="
-# Создаем пользователя с именем из первого параметра
+echo "=== 3. Создание пользователя в MinIO ==="
+# Создаем пользователя
 mc-minio admin user add local "$NEW_USER" "$NEW_PASSWORD"
 
 # Назначаем пользователю стандартную политику readwrite
