@@ -18,9 +18,17 @@ done
 for cert in russian-trusted-root-ca-gost-2025 russian-trusted-sub-ca-gost-2025; do
   wget -q -O ${cert}.crt https://high-cloud.ru/assets/chain/${cert}.crt
   sudo cp ${cert}.crt /usr/local/share/ca-certificates/${cert}.crt
-  certutil -d sql:"$HOME/.pki/nssdb" -D -n "${cert}" 2>/dev/null || true
-  certutil -d sql:"$HOME/.pki/nssdb" -A -t "CT,C,C" -n "${cert}" -i ${cert}.crt || echo "NSS: ${cert} skipped (GOST not supported by certutil)"
   rm -f ${cert}.crt
 done
 
 sudo update-ca-certificates
+
+# ГОСТ-цепочка проверяется через СКЗИ (CryptoPro), а не NSS/системное хранилище
+if [ -x /opt/cprocsp/bin/amd64/certmgr ]; then
+  sudo /opt/cprocsp/bin/amd64/certmgr -install -store mRoot \
+    -file /usr/local/share/ca-certificates/russian-trusted-root-ca-gost-2025.crt
+  sudo /opt/cprocsp/bin/amd64/certmgr -install -store mCA \
+    -file /usr/local/share/ca-certificates/russian-trusted-sub-ca-gost-2025.crt
+else
+  echo "CryptoPro не найден: ГОСТ-сайты (esia.gosuslugi.ru) не будут открываться" >&2
+fi
