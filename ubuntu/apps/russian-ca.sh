@@ -21,6 +21,15 @@ for cert in russian-trusted-root-ca-gost-2025 russian-trusted-sub-ca-gost-2025; 
   rm -f ${cert}.crt
 done
 
+# Корневые сертификаты ГУЦ Минцифры (2022 и 2026 — используются ФНС/nalog.ru)
+wget -q -O guc2022.crt http://reestr-pki.ru/cdp/guc2022.crt
+sudo cp guc2022.crt /usr/local/share/ca-certificates/guc2022.crt
+rm -f guc2022.crt
+
+wget -q -O guc2026.crt http://crl.gosuslugi.ru/cdp/guc2026.crt
+sudo cp guc2026.crt /usr/local/share/ca-certificates/guc2026.crt
+rm -f guc2026.crt
+
 sudo update-ca-certificates
 
 # ГОСТ-цепочка проверяется через СКЗИ (CryptoPro), а не NSS/системное хранилище
@@ -29,6 +38,10 @@ if [ -x /opt/cprocsp/bin/amd64/certmgr ]; then
     -file /usr/local/share/ca-certificates/russian-trusted-root-ca-gost-2025.crt
   sudo /opt/cprocsp/bin/amd64/certmgr -install -store mCA \
     -file /usr/local/share/ca-certificates/russian-trusted-sub-ca-gost-2025.crt
+  sudo /opt/cprocsp/bin/amd64/certmgr -install -store mRoot \
+    -file /usr/local/share/ca-certificates/guc2022.crt
+  sudo /opt/cprocsp/bin/amd64/certmgr -install -store mRoot \
+    -file /usr/local/share/ca-certificates/guc2026.crt
 else
-  echo "CryptoPro не найден: ГОСТ-сайты (esia.gosuslugi.ru) не будут открываться" >&2
+  echo "CryptoPro не найден: ГОСТ-сайты (esia.gosuslugi.ru, nalog.ru) не будут открываться" >&2
 fi
